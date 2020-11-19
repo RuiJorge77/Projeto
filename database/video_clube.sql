@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Nov-2020 às 11:20
+-- Generation Time: 19-Nov-2020 às 16:18
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -72,11 +72,11 @@ CREATE TABLE `filmes` (
 --
 
 INSERT INTO `filmes` (`id_filme`, `titulo`, `id_genero`, `sinopse`, `quantidade`, `idioma`, `id_ator`, `updated_at`, `created_at`) VALUES
-(1, 'Piratas das Caraíbas', 3, 'O pirata Jack Sparrow tem um navio que foi roubado pelo capitão Barbossa e pela sua tripulação. Com o navio de Sparrow, Barbossa vai invadir a cidade de Port Royal, levando consigo Elizabeth Swann, filha do governador. Para recuperar a sua embarcação, Sparrow recebe a ajuda de Will Turner, um grande amigo de Elizabeth. Eles desbravam os mares em direção à misteriosa Ilha da Morte, tentando impedir que os piratas-esqueleto derramem o sangue de Elizabeth para desfazer a maldição que os assola.', 1, 'Português/Inglês', 1, NULL, NULL),
-(2, 'The Devil All The Time', 4, 'A história passa-se no sul de Ohio e da Virginia Ocidental, na parte rural das cidades. The Devil All the Time fala de histórias de personagens loucos surgidos no final da Segunda Guerra Mundial, nos anos 60. Willard Russell é um veterano atormentado por não conseguir salvar a sua bonita esposa, Charlotte, de uma morte agonizante por um cancro. Não importa quanto sangue ele tenha depositado em no seu “altar” para salvá-la, ele não consegue.\r\n\r\nCarl e Sandy Henderson são marido e mulher, mas também uma dupla de serial killers. Eles percorrem as estradas norte-americanas em busca de modelos para fotografar e exterminar. Roy é um pastor especialista em aranhas, que foge da lei ao lado de seu guitarrista aleijado, Theodore. E finalmente, preso no meio disso tudo, está Arvin Eugene Russell, o filho órfão de Willard e Charlotte. Ele cresceu e busca se tornar um homem bom, mas também violento na sua própria maneira.', 1, 'Português/Inglês', NULL, NULL, NULL),
-(3, 'The Karate Kid', 5, 'Um rapaz de 12 anos chamado Dre Parker muda-se para a China com a mãe e vê-se numa  terra estranha. Ele sabe um pouco de caratê, mas as suas habilidades não são o bastante para enfrentar o valentão da escola, Cheng. Dre faz amizade com o Sr. Han, um mestre das artes marciais, que lhe ensina os segredos do kung fu na esperança de que o rapaz possa derrotar Cheng e, quem sabe, conquistar o coração da linda Mei Ying.', 1, 'Português/Inglês', NULL, NULL, NULL),
-(4, 'Vaiana', 2, 'Uma jovem parte para uma missão de salvar o seu povo. Durante a jornada, Vaiana conhece o outrora poderoso semideus Maui, que a guia na sua busca para se tornar uma mestre em encontrar caminhos. Juntos, eles navegam pelo oceano em uma viagem incrível.', 1, 'Português/Inglês', NULL, NULL, NULL),
-(5, 'O Homem Invisível', 1, 'Depois de finjir o próprio suicídio, um cientista enlouquecido usa seu poder para se tornar invisível e aterrorizar a sua ex-namorada. Quando a polícia se recusa a acreditar na sua história, ela decide resolver o assunto por conta própria.', 1, 'Português/Inglês', NULL, NULL, NULL);
+(1, 'Piratas das Caraíbas', 1, 'O pirata Jack Sparrow tem um navio que foi roubado pelo capitão Barbossa e pela sua tripulação. Com o navio de Sparrow, Barbossa vai invadir a cidade de Port Royal, levando consigo Elizabeth Swann, filha do governador. Para recuperar a sua embarcação, Sparrow recebe a ajuda de Will Turner, um grande amigo de Elizabeth. Eles desbravam os mares em direção à misteriosa Ilha da Morte, tentando impedir que os piratas-esqueleto derramem o sangue de Elizabeth para desfazer a maldição que os assola.', 1, 'Português/Inglês', 1, NULL, NULL),
+(2, 'The Devil All The Time', 2, 'A história passa-se no sul de Ohio e da Virginia Ocidental, na parte rural das cidades. The Devil All the Time fala de histórias de personagens loucos surgidos no final da Segunda Guerra Mundial, nos anos 60. Willard Russell é um veterano atormentado por não conseguir salvar a sua bonita esposa, Charlotte, de uma morte agonizante por um cancro. Não importa quanto sangue ele tenha depositado em no seu “altar” para salvá-la, ele não consegue.\r\n\r\nCarl e Sandy Henderson são marido e mulher, mas também uma dupla de serial killers. Eles percorrem as estradas norte-americanas em busca de modelos para fotografar e exterminar. Roy é um pastor especialista em aranhas, que foge da lei ao lado de seu guitarrista aleijado, Theodore. E finalmente, preso no meio disso tudo, está Arvin Eugene Russell, o filho órfão de Willard e Charlotte. Ele cresceu e busca se tornar um homem bom, mas também violento na sua própria maneira.', 1, 'Português/Inglês', NULL, NULL, NULL),
+(3, 'The Karate Kid', 3, 'Um rapaz de 12 anos chamado Dre Parker muda-se para a China com a mãe e vê-se numa  terra estranha. Ele sabe um pouco de caratê, mas as suas habilidades não são o bastante para enfrentar o valentão da escola, Cheng. Dre faz amizade com o Sr. Han, um mestre das artes marciais, que lhe ensina os segredos do kung fu na esperança de que o rapaz possa derrotar Cheng e, quem sabe, conquistar o coração da linda Mei Ying.', 1, 'Português/Inglês', NULL, NULL, NULL),
+(4, 'Vaiana', 4, 'Uma jovem parte para uma missão de salvar o seu povo. Durante a jornada, Vaiana conhece o outrora poderoso semideus Maui, que a guia na sua busca para se tornar uma mestre em encontrar caminhos. Juntos, eles navegam pelo oceano em uma viagem incrível.', 1, 'Português/Inglês', NULL, NULL, NULL),
+(5, 'O Homem Invisível', 5, 'Depois de finjir o próprio suicídio, um cientista enlouquecido usa seu poder para se tornar invisível e aterrorizar a sua ex-namorada. Quando a polícia se recusa a acreditar na sua história, ela decide resolver o assunto por conta própria.', 1, 'Português/Inglês', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -97,11 +97,11 @@ CREATE TABLE `generos` (
 --
 
 INSERT INTO `generos` (`id_genero`, `designacao`, `observacoes`, `created_at`, `updated_at`) VALUES
-(1, 'Terror', NULL, NULL, NULL),
-(2, 'Fantasia', NULL, NULL, NULL),
-(3, 'Aventura', NULL, NULL, NULL),
-(4, 'Suspense', NULL, NULL, NULL),
-(5, 'drama', NULL, NULL, NULL);
+(1, 'Aventura', NULL, NULL, NULL),
+(2, 'Suspense', NULL, NULL, NULL),
+(3, 'Drama', NULL, NULL, NULL),
+(4, 'Fantasia', NULL, NULL, NULL),
+(5, 'Terror', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
