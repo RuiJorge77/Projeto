@@ -6,12 +6,12 @@
 <br>
 {{$filme->idioma}}<br>
 <br>
-{{$filme->sinopse}}
-<ul>
-@foreach($filme->generos as $gene)
-    <li>{{$gene->designacao}}</li>
-@endforeach
-</ul>
+{{$filme->sinopse}}<br>
+<br>
+{{$filme->generos->designacao}}<br>
+<br>
+{{$filme->ator->nome}}<br>
+<br>
 @else
 <h1 style="color:ff0000">ERRO</h1>
 @endif
