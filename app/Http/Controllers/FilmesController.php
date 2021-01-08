@@ -24,4 +24,5 @@ class FilmesController extends Controller
             'filme'=> $filme
         ]);
     }
+    
 }

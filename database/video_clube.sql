@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Nov-2020 às 16:18
+-- Generation Time: 08-Jan-2021 às 18:25
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -47,7 +47,11 @@ INSERT INTO `atores` (`id_ator`, `nome`, `nacionalidade`, `data_nascimento`, `fo
 (2, 'Leonardo DiCaprio', 'norte-americano', '1974-11-11 00:00:00', 'Ator2.jpg', NULL, NULL),
 (3, 'Will Smith', 'norte-americano', '1968-09-25 00:00:00', 'Ator3.jpg', NULL, NULL),
 (4, 'Tom Cruise', 'norte-americano', '1962-07-03 00:00:00', 'Ator4.jpg', NULL, NULL),
-(5, 'Brad Pitt', 'norte-americano', '1963-12-18 00:00:00', 'Ator5.jpg', NULL, NULL);
+(5, 'Brad Pitt', 'norte-americano', '1963-12-18 00:00:00', 'Ator5.jpg', NULL, NULL),
+(6, 'Rui', 'Portugues', '2021-01-08 00:00:00', NULL, '2021-01-08 16:53:30', '2021-01-08 16:11:35'),
+(7, 'Rui', 'Portugues', NULL, NULL, '2021-01-08 16:12:05', '2021-01-08 16:12:05'),
+(8, 'Rui', 'Portugues', NULL, NULL, '2021-01-08 16:12:49', '2021-01-08 16:12:49'),
+(9, 'Rui', 'Portugues', NULL, NULL, '2021-01-08 16:13:27', '2021-01-08 16:13:27');
 
 -- --------------------------------------------------------
 
@@ -133,7 +137,7 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT for table `atores`
 --
 ALTER TABLE `atores`
-  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `filmes`

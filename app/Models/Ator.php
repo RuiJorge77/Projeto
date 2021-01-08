@@ -19,4 +19,11 @@ class Ator extends Model
             'id_ator'
         );
     }
+    
+    protected $fillable = [
+        'nome',
+        'nacionalidade',
+        'data_nascimento',
+        'fotografia'
+    ];
 }
