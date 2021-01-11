@@ -1,4 +1,4 @@
-<form action="{{route('atores.store', ['id'=>$ator->id_ator])}}" method="post">
+<form action="{{route('atores.store')}}" method="post">
 @csrf
 Nome: <input type="text" name="nome"><br>
 @if($errors->has('nome') )

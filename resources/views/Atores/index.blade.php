@@ -7,9 +7,9 @@ Video Clube
 <li>{{$ator->nome}}</li>
 </a>
 </h3>
+@endforeach
 @if(session()->has('mensagem'))
     <div class="alert alert-danger" role="alert">
     {{session('mensagem')}}
     </div>
 @endif
-@endforeach

@@ -14,12 +14,16 @@ Updated_at: {{$ator->update_at}}<br>
     <li>{{$movie->titulo}}</li>
 @endforeach
 </ul>
+<button>
 <a class="btn btn-primary" href="{{route('atores.edit', ['id'=>$ator->id_ator])}}">
     Editar
 </a>
+</button>
+<button>
 <a class="btn btn-primary" href="{{route('atores.delete', ['id'=>$ator->id_ator])}}">
     Eliminar
 </a>
+</button>
 @else
 <h1 style="color:ff0000">ERRO</h1>
 @endif

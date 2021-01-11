@@ -25,5 +25,14 @@ class Filme extends Model
         'App\Models\Ator',
             'id_filme'
         );
-    } 
+    }
+    
+    protected $fillable = [
+        'titulo',
+        'id_genero',
+        'sinopse',
+        'quantidade',
+        'idioma',
+        'id_ator'
+    ];
 }

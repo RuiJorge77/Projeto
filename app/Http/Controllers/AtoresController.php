@@ -83,7 +83,7 @@ class AtoresController extends Controller
     public function destroy(Request $request){
         $idator = $request->id;
         $ator = Ator::findOrFail($idator);
-        $livro->delete();
+        $ator->delete();
         return redirect()->route('atores.index')->with('mensagem', 'Ator Eliminado!');
     }
 }
