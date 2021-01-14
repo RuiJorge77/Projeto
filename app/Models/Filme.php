@@ -23,7 +23,7 @@ class Filme extends Model
     public function ator(){
         return $this->belongsTO(
         'App\Models\Ator',
-            'id_filme'
+            'id_ator'
         );
     }
     

@@ -53,7 +53,29 @@ route::delete('/filmes/{id}', 'App\Http\Controllers\FilmesController@destroy')->
 
 
 //generos
-route::get('/generos', 'App\Http\Controllers\GenerosController@index')->name('Genero.index');
+route::get('/generos', 'App\Http\Controllers\GenerosController@index')->name('generos.index');
 
-route::get('/generos/{numero}/show', 'App\Http\Controllers\GenerosController@show')->name('Genero.show');
+route::get('/generos/{id}/show', 'App\Http\Controllers\GenerosController@show')->name('generos.show');
 
+route::get('/generos/create', 'App\Http\Controllers\GenerosController@create')->name('generos.create');
+
+route::post('/generos', 'App\Http\Controllers\GenerosController@store')->name('generos.store');
+
+route::get('/generos/{id}/edit', 'App\Http\Controllers\GenerosController@edit')->name('generos.edit');
+
+route::patch('/generos/{id}', 'App\Http\Controllers\GenerosController@update')->name('generos.update');
+
+route::get('/generos/{id}/delete', 'App\Http\Controllers\GenerosController@delete')->name('generos.delete');
+
+route::delete('/generos/{id}', 'App\Http\Controllers\GenerosController@destroy')->name('generos.destroy');
+
+
+//autenticacao
+
+//autenticacao
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/comentario','App\Http\Controllers\LivrosController@comentarios')
+    ->name('comentarios.store');

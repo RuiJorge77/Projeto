@@ -8,18 +8,20 @@ idioma: {{$filme->idioma}}<br>
 <br>
 sinopse: {{$filme->sinopse}}<br>
 <br>
+@if(isset($filme->ator))
 Ator: {{$filme->ator->nome}}<br>
+@endif
 <br>
 Created_at: {{$filme->created_at}}<br>
 <br>
 Updated_at: {{$filme->update_at}}<br>
 <button>
-<a class="btn btn-primary" href="{{route('atores.edit', ['id'=>$filme->id_filme])}}">
+<a class="btn btn-primary" href="{{route('filmes.edit', ['id'=>$filme->id_filme])}}">
     Editar
 </a>
 </button>
 <button>
-<a class="btn btn-primary" href="{{route('atores.delete', ['id'=>$filme->id_filme])}}">
+<a class="btn btn-primary" href="{{route('filmes.delete', ['id'=>$filme->id_filme])}}">
     Eliminar
 </a>
 </button>

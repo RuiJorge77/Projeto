@@ -8,6 +8,16 @@
     <li>{{$moviee->titulo}}</li>
 @endforeach
 </ul>
+<button>
+<a class="btn btn-primary" href="{{route('generos.edit', ['id'=>$genero->id_genero])}}">
+    Editar
+</a>
+</button>
+<button>
+<a class="btn btn-primary" href="{{route('generos.delete', ['id'=>$genero->id_genero])}}">
+    Eliminar
+</a>
+</button>
 @else
 <h1 style="color:ff0000">ERRO</h1>
 @endif

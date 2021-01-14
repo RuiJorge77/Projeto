@@ -13,3 +13,8 @@ Video Clube
     {{session('mensagem')}}
     </div>
 @endif
+<button>
+    <a class="btn btn-primary" href="{{route('filmes.create', ['id'=>$filme->id_filme])}}">
+        Criar
+    </a>
+</button>
