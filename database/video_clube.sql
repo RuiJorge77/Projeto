@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Jan-2021 às 18:25
+-- Generation Time: 14-Jan-2021 às 16:26
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -43,15 +43,11 @@ CREATE TABLE `atores` (
 --
 
 INSERT INTO `atores` (`id_ator`, `nome`, `nacionalidade`, `data_nascimento`, `fotografia`, `updated_at`, `created_at`) VALUES
-(1, 'Johnny Depp', 'norte-americano', '1963-06-09 00:00:00', 'Ator1.jpg', NULL, NULL),
-(2, 'Leonardo DiCaprio', 'norte-americano', '1974-11-11 00:00:00', 'Ator2.jpg', NULL, NULL),
-(3, 'Will Smith', 'norte-americano', '1968-09-25 00:00:00', 'Ator3.jpg', NULL, NULL),
-(4, 'Tom Cruise', 'norte-americano', '1962-07-03 00:00:00', 'Ator4.jpg', NULL, NULL),
-(5, 'Brad Pitt', 'norte-americano', '1963-12-18 00:00:00', 'Ator5.jpg', NULL, NULL),
-(6, 'Rui', 'Portugues', '2021-01-08 00:00:00', NULL, '2021-01-08 16:53:30', '2021-01-08 16:11:35'),
-(7, 'Rui', 'Portugues', NULL, NULL, '2021-01-08 16:12:05', '2021-01-08 16:12:05'),
-(8, 'Rui', 'Portugues', NULL, NULL, '2021-01-08 16:12:49', '2021-01-08 16:12:49'),
-(9, 'Rui', 'Portugues', NULL, NULL, '2021-01-08 16:13:27', '2021-01-08 16:13:27');
+(1, 'Johnny Depp', 'norte-americano', NULL, '1610637665_Ator1.jpg', '2021-01-14 15:21:05', NULL),
+(2, 'Leonardo DiCaprio', 'norte-americano', '1974-11-11 00:00:00', '', NULL, NULL),
+(3, 'Will Smith', 'norte-americano', '1968-09-25 00:00:00', '', NULL, NULL),
+(4, 'Tom Cruise', 'norte-americano', '1962-07-03 00:00:00', '', NULL, NULL),
+(5, 'Brad Pitt', 'norte-americano', '1963-12-18 00:00:00', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -107,6 +103,30 @@ INSERT INTO `generos` (`id_genero`, `designacao`, `observacoes`, `created_at`, `
 (4, 'Fantasia', NULL, NULL, NULL),
 (5, 'Terror', NULL, NULL, NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Rui', 'a14111@aedah.pt', NULL, '$2y$10$x4qbkaCpw6Bi6GzTqu99we42PhCp29dn/UOgpr0pR6Rvc3oItU.dK', NULL, '2021-01-14 14:01:21', '2021-01-14 14:01:21');
+
 --
 -- Indexes for dumped tables
 --
@@ -130,6 +150,12 @@ ALTER TABLE `generos`
   ADD PRIMARY KEY (`id_genero`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -137,7 +163,7 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT for table `atores`
 --
 ALTER TABLE `atores`
-  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `filmes`
@@ -150,6 +176,12 @@ ALTER TABLE `filmes`
 --
 ALTER TABLE `generos`
   MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
