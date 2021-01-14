@@ -16,6 +16,12 @@ Created_at: {{$filme->created_at}}<br>
 <br>
 Updated_at: {{$filme->update_at}}<br>
 <button>
+<a class="btn btn-primary" href="{{route('filmes.index', ['id'=>$filme->id_filme])}}">
+    Voltar
+</a>
+</button>
+@if(auth()->check())
+<button>
 <a class="btn btn-primary" href="{{route('filmes.edit', ['id'=>$filme->id_filme])}}">
     Editar
 </a>
@@ -25,6 +31,7 @@ Updated_at: {{$filme->update_at}}<br>
     Eliminar
 </a>
 </button>
+@endif
 @else
 <h1 style="color:ff0000">ERRO</h1>
 @endif

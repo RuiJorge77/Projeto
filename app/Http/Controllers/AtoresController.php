@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Models\Ator;
 use App\Models\Filme;
 use App\Models\Genero;
@@ -23,6 +24,7 @@ class AtoresController extends Controller
         $idator = $request->id;
         //dd($idator);
         $ator = Ator::where('id_ator', $idator)->with('filmes')->first();
+        //dd($ator);
         return view('Atores.show',[
             'ator'=> $ator
         ]);
@@ -42,6 +44,12 @@ class AtoresController extends Controller
             'fotografia'=>['image', 'nullable', 'max:2000'],
         ]);
         
+        if($request->hasFile('fotografia')){
+            $nomeimagem = $request->file('fotografia')->getClientOriginalName();
+            $nomeimagem = time().'_'. $nomeimagem;
+            $guardarimagem = $request->file('fotografia')->storeAs('imagens/atores', $nomeimagem);
+            $ator['fotografia'] = $nomeimagem;
+        }
         $ator = Ator::create($novoator);
         
         return redirect()->route('atores.show', [
@@ -66,6 +74,14 @@ class AtoresController extends Controller
             'data_nascimento'=>['nullable', 'date'],
             'fotografia'=>['image', 'nullable', 'max:2000'],
         ]);
+        
+        if($request->hasFile('fotografia')){
+            $nomeimagem = $request->file('fotografia')->getClientOriginalName();
+            $nomeimagem = time().'_'. $nomeimagem;
+            //dd($nomeimagem);
+            $guardarimagem = $request->file('fotografia')->storeAs('imagens/atores', $nomeimagem);
+            $atualizarator['fotografia'] = $nomeimagem;
+        }
         $ator->update($atualizarator);
         return redirect()->route('atores.show',[
             'id'=>$ator->id_ator

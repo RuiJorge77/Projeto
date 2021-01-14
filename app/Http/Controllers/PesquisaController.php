@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Livro;
+use App\Models\Ator;
+use App\Models\Filme;
+use App\Models\Generos;
 
 class PesquisaController extends Controller
 {
@@ -13,7 +15,7 @@ class PesquisaController extends Controller
     }
     public function formenviado(Request $request){
         $string=$request->pesquisa;
-        $re=Livro::where('titulo','Like','%'.$string.'%')->get();
+        $re=Ator::where('Nome','Like','%'.$string.'%')->get();
         return view('pesquisares',['pesquisa'=>$string,'resultado'=>$re]);
     }
 }

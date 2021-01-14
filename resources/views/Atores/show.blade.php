@@ -6,6 +6,9 @@ Nacionalidade: {{$ator->nacionalidade}}<br>
 <br>
 Data de Nascimento: {{$ator->data_nascimento}}
 <br>
+
+<img src="{{asset('imagens/atores/'.$ator->fotografia)}}">
+
 Created_at: {{$ator->created_at}}<br>
 <br>
 Updated_at: {{$ator->update_at}}<br>
@@ -14,6 +17,12 @@ Updated_at: {{$ator->update_at}}<br>
     <li>{{$movie->titulo}}</li>
 @endforeach
 </ul>
+<button>
+<a class="btn btn-primary" href="{{route('atores.index', ['id'=>$ator->id_ator])}}">
+    Voltar
+</a>
+</button>
+@if(auth()->check())
 <button>
 <a class="btn btn-primary" href="{{route('atores.edit', ['id'=>$ator->id_ator])}}">
     Editar
@@ -24,6 +33,7 @@ Updated_at: {{$ator->update_at}}<br>
     Eliminar
 </a>
 </button>
+@endif
 @else
 <h1 style="color:ff0000">ERRO</h1>
 @endif

@@ -23,11 +23,11 @@
         nav{
             color:#000000;
         }
-        button,input{
+        button{
             background-color: #6be585;
         }
         img{
-            height: 200px;
+            height: 100px;
             
         }
     </style>  
@@ -42,12 +42,11 @@
     @yield('conteudo')
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{{route('pesquisa.index')}}">Procura</a>
-      <a class="nav-item nav-link" href="{{route('livros.index')}}">Livros</a>
-      <a class="nav-item nav-link" href="{{route('generos.index')}}">Generos</a>
-      <a class="nav-item nav-link" href="{{route('editoras.index')}}">Editoras</a>
-      <a class="nav-item nav-link" href="{{route('autores.index')}}">Autores</a>
-    <a class="nav-item nav-link" href="{{route('login')}}">Login</a>
+        <a class="nav-item nav-link" href="{{route('pesquisa.index')}}">Procura</a>
+        <a class="nav-item nav-link" href="{{route('atores.index')}}">Atores</a>
+        <a class="nav-item nav-link" href="{{route('filmes.index')}}">Filmes</a>
+        <a class="nav-item nav-link" href="{{route('generos.index')}}">Generos</a>
+        <a class="nav-item nav-link" href="{{route('login')}}">Login</a>
         <a class="nav-item nav-link" href="{{route('register')}}">Register</a>
         @if(auth()->check())
         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -60,11 +59,12 @@
         </form>
         @endif
   </div>
-        @if(auth()->check())
-        {{Auth::user()->id}}<br>
-        {{Auth::user()->email}}<br>
-        {{Auth::user()->name}}<br>
-        @endif
+        <h4 style="color: #ffffff">
+            @if(auth()->check())
+                Nome: {{Auth::user()->name}}<br>
+                Email: {{Auth::user()->email}}
+            @endif
+        </h4>
 </nav>
 </body>
 </html>

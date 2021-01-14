@@ -1,4 +1,4 @@
-<form action="{{route('atores.store')}}" method="post">
+<form action="{{route('atores.store')}}" enctype="multipart/form-data" method="post">
 @csrf
 Nome: <input type="text" name="nome"><br>
 @if($errors->has('nome') )

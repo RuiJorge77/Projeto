@@ -4,8 +4,8 @@ Livraria
 @endsection
 @section('conteudo')
 @foreach($resultado as $res)
-    <a href="{{route('livros.show', ['id'=>$res->id_livro])}}">
-    <h4>Livros com esse nome: {{$res->titulo}}</h4>
+    <a href="{{route('atores.show', ['id'=>$res->id_ator])}}">
+    <h4>Atores com esse nome: {{$res->nome}}</h4>
     </a>
     <br>
 @endforeach

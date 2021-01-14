@@ -1,4 +1,4 @@
-<form action="{{route('atores.update', ['id'=>$ator->id_ator])}}" method="post">
+<form action="{{route('atores.update', ['id'=>$ator->id_ator])}}" enctype="multipart/form-data" method="post">
 @csrf
 @method('patch')
 Nome: <input type="text" name="nome" value="{{$ator->nome}}"><br>

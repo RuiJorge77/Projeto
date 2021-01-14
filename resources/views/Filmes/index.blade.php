@@ -14,7 +14,14 @@ Video Clube
     </div>
 @endif
 <button>
+<a class="btn btn-primary" href="{{route('pesquisa.index', ['id'=>$filme->id_filme])}}">
+    Voltar
+</a>
+</button>
+@if(auth()->check())
+<button>
     <a class="btn btn-primary" href="{{route('filmes.create', ['id'=>$filme->id_filme])}}">
         Criar
     </a>
 </button>
+@endif

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Models\Genero;
 use App\Models\Ator;
 use App\Models\Filme;
