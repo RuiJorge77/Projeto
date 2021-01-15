@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Jan-2021 às 16:26
+-- Generation Time: 15-Jan-2021 às 18:21
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -44,10 +44,10 @@ CREATE TABLE `atores` (
 
 INSERT INTO `atores` (`id_ator`, `nome`, `nacionalidade`, `data_nascimento`, `fotografia`, `updated_at`, `created_at`) VALUES
 (1, 'Johnny Depp', 'norte-americano', NULL, '1610637665_Ator1.jpg', '2021-01-14 15:21:05', NULL),
-(2, 'Leonardo DiCaprio', 'norte-americano', '1974-11-11 00:00:00', '', NULL, NULL),
-(3, 'Will Smith', 'norte-americano', '1968-09-25 00:00:00', '', NULL, NULL),
-(4, 'Tom Cruise', 'norte-americano', '1962-07-03 00:00:00', '', NULL, NULL),
-(5, 'Brad Pitt', 'norte-americano', '1963-12-18 00:00:00', '', NULL, NULL);
+(2, 'Leonardo DiCaprio', 'norte-americano', NULL, '1610723815_Ator2.jpg', '2021-01-15 15:16:55', NULL),
+(3, 'Will Smith', 'norte-americano', NULL, '1610723860_Ator3.jpg', '2021-01-15 15:17:40', NULL),
+(4, 'Tom Cruise', 'norte-americano', NULL, '1610724016_Ator4.jpg', '2021-01-15 15:20:16', NULL),
+(5, 'Brad Pitt', 'norte-americano', NULL, '1610724031_Ator5.jpg', '2021-01-15 15:20:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -115,6 +115,7 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
+  `tipo_user` varchar(20) NOT NULL DEFAULT 'normal' COMMENT 'normal ou admin',
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -124,8 +125,8 @@ CREATE TABLE `users` (
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Rui', 'a14111@aedah.pt', NULL, '$2y$10$x4qbkaCpw6Bi6GzTqu99we42PhCp29dn/UOgpr0pR6Rvc3oItU.dK', NULL, '2021-01-14 14:01:21', '2021-01-14 14:01:21');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tipo_user`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Rui', 'a14111@aedah.pt', NULL, '$2y$10$x4qbkaCpw6Bi6GzTqu99we42PhCp29dn/UOgpr0pR6Rvc3oItU.dK', 'admin', NULL, '2021-01-14 14:01:21', '2021-01-14 14:01:21');
 
 --
 -- Indexes for dumped tables
@@ -163,7 +164,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `atores`
 --
 ALTER TABLE `atores`
-  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_ator` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `filmes`

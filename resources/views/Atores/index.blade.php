@@ -18,10 +18,12 @@ Video Clube
     Voltar
 </a>
 </button>
+@if(Gate::allows('atualizar-livro'. $ator) || Gate::allows('admin'))
 @if(auth()->check())
 <button>
     <a class="btn btn-primary" href="{{route('atores.create', ['id'=>$ator->id_ator])}}">
         Criar
     </a>
 </button>
+@endif
 @endif

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('titulo-pagina')
-Livraria
+Video Clube
 @endsection
 @section('conteudo')
 <form method="post" action="{{route('pesquisa.form')}}">

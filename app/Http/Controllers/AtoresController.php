@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Gate;
 use App\Models\Ator;
 use App\Models\Filme;
 use App\Models\Genero;
@@ -43,7 +44,6 @@ class AtoresController extends Controller
             'data_nascimento'=>['nullable', 'date'],
             'fotografia'=>['image', 'nullable', 'max:2000'],
         ]);
-        
         if($request->hasFile('fotografia')){
             $nomeimagem = $request->file('fotografia')->getClientOriginalName();
             $nomeimagem = time().'_'. $nomeimagem;
@@ -60,9 +60,16 @@ class AtoresController extends Controller
     public function edit(Request $request){
         $idator = $request->id;
         $ator = Ator::where('id_ator', $idator)->first();
-        return view('atores.edit', [
+        if(Gate::allows('atualizar-livro', $livro) || Gate::allows('admin')) {
+            $filmes = Filme::all();
+            
+            return view('atores.edit', [
            'ator'=>$ator 
         ]);
+        }
+        else{
+            return redirect()->route('atores.index')->with('mensagem', 'Não Tem permissão para aceder á area pretendida');
+        }
     }
     
     public function update(Request $request){

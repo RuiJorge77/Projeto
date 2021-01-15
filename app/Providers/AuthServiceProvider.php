@@ -26,5 +26,18 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+        Gate::define('atualizar-livro', function($user, $livro){
+           
+            return $user->id== $livro->id_user;
+        });
+        
+        Gate::define('admin', function($user){
+           if(($user->tipo_user=='admin')($user->id==$ator->id_user)) {
+               return true;
+           }
+            else{
+                return false;
+            }
+        });
     }
 }

@@ -4,11 +4,11 @@ Nome: {{$ator->nome}}<br>
 <br>
 Nacionalidade: {{$ator->nacionalidade}}<br>
 <br>
-Data de Nascimento: {{$ator->data_nascimento}}
+Data de Nascimento: {{$ator->data_nascimento}}<br>
 <br>
-
+Fotografia: <br>
 <img src="{{asset('imagens/atores/'.$ator->fotografia)}}">
-
+<br>
 Created_at: {{$ator->created_at}}<br>
 <br>
 Updated_at: {{$ator->update_at}}<br>
@@ -22,6 +22,7 @@ Updated_at: {{$ator->update_at}}<br>
     Voltar
 </a>
 </button>
+@if(Gate::allows('atualizar-livro'. $ator) || Gate::allows('admin'))
 @if(auth()->check())
 <button>
 <a class="btn btn-primary" href="{{route('atores.edit', ['id'=>$ator->id_ator])}}">
@@ -33,6 +34,7 @@ Updated_at: {{$ator->update_at}}<br>
     Eliminar
 </a>
 </button>
+@endif
 @endif
 @else
 <h1 style="color:ff0000">ERRO</h1>
