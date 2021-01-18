@@ -48,7 +48,7 @@ class AtoresController extends Controller
             $nomeimagem = $request->file('fotografia')->getClientOriginalName();
             $nomeimagem = time().'_'. $nomeimagem;
             $guardarimagem = $request->file('fotografia')->storeAs('imagens/atores', $nomeimagem);
-            $ator['fotografia'] = $nomeimagem;
+            $novoator['fotografia'] = $nomeimagem;
         }
         $ator = Ator::create($novoator);
         
@@ -60,7 +60,7 @@ class AtoresController extends Controller
     public function edit(Request $request){
         $idator = $request->id;
         $ator = Ator::where('id_ator', $idator)->first();
-        if(Gate::allows('atualizar-livro', $livro) || Gate::allows('admin')) {
+        if(Gate::allows('atualizar-livro', $ator) || Gate::allows('admin')) {
             $filmes = Filme::all();
             
             return view('atores.edit', [
